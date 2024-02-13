@@ -1,0 +1,5 @@
+alerts:
+  - interval: 20
+    duration: 20
+    title: "Time to take a break"
+    message: "Time to walk around for"
