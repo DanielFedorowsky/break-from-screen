@@ -10,8 +10,8 @@ def start_alert_scheduler(alert: config_parser.Alert):
     print('starting alert scheduler')
     print(alert)
     a = alerter.Alerter(alert.title, alert.message, alert.duration)
-    threading.Thread(target=timer.trigger_function_every_x_seconds, args=(alert.interval, a.open_message_box_with_countdown,)).start()
-
+    # threading.Thread(target=timer.trigger_function_every_x_seconds, args=(alert.interval, a.open_message_box_with_countdown,)).start()
+    timer.trigger_function_every_x_seconds(alert.interval, a.open_message_box_with_countdown)
 
 if __name__ == '__main__':
     alerts = config_parser.read_alerts_from_yaml('./config.yaml')
